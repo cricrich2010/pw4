@@ -52,5 +52,6 @@ export function isVictory(player, gameGrid) {
             }
         }
     }
+    console.log("no victory")
     return false
 }

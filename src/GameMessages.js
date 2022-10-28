@@ -2,7 +2,7 @@ export function GameMessages(props) {
     let partyMessage = props.partyMessage;
 
     return (
-        <div>
+        <div id="gameMessages" data-testid="gameMessages">
             <p>{partyMessage}</p>
         </div>
     );

@@ -1,8 +1,6 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
 import { isVictory } from './computeVictory.js'
 
-test('check player victory/lose', () => {
+test('check grid player victory/lose', () => {
     let player = 0
     let gameGrid = ''
     gameGrid = [
@@ -12,12 +10,12 @@ test('check player victory/lose', () => {
         [2, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(false);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(true);
 
 
     gameGrid = [
@@ -27,12 +25,12 @@ test('check player victory/lose', () => {
         [0, 2, 0, 0, 0, 0],
         [0, 2, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(false);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(true);
 
 
     gameGrid = [
@@ -42,12 +40,12 @@ test('check player victory/lose', () => {
         [0, 0, 2, 0, 0, 0],
         [0, 0, 2, 0, 0, 0],
         [0, 0, 2, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(false);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(true);
 
 
     gameGrid = [
@@ -57,12 +55,12 @@ test('check player victory/lose', () => {
         [0, 0, 0, 2, 0, 0],
         [0, 0, 0, 2, 0, 0],
         [0, 0, 0, 2, 0, 0],
-        [0, 0, 0, 2, 0, 0],
+        [0, 0, 0, 2, 0, 0]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(false);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(true);
 
 
     gameGrid = [
@@ -72,12 +70,12 @@ test('check player victory/lose', () => {
         [0, 0, 0, 0, 2, 0],
         [0, 0, 0, 0, 2, 0],
         [0, 0, 0, 0, 2, 0],
-        [0, 0, 0, 0, 2, 0],
+        [0, 0, 0, 0, 2, 0]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(false);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(true);
 
 
     gameGrid = [
@@ -89,10 +87,10 @@ test('check player victory/lose', () => {
         [0, 0, 0, 0, 0, 2],
         [0, 0, 0, 0, 0, 0],
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(false);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(true);
     gameGrid = [
         [1, 1, 1, 1, 0, 0],
         [0, 0, 0, 0, 0, 0],
@@ -100,12 +98,12 @@ test('check player victory/lose', () => {
         [0, 0, 0, 0, 0, 2],
         [0, 0, 0, 0, 0, 2],
         [0, 0, 0, 0, 0, 2],
-        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(true);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(true);
 
     gameGrid = [
         [0, 0, 0, 0, 0, 0],
@@ -114,12 +112,12 @@ test('check player victory/lose', () => {
         [0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(true);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(false);
 
 
     gameGrid = [
@@ -129,12 +127,12 @@ test('check player victory/lose', () => {
         [0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(true);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(false);
 
     gameGrid = [
         [0, 0, 0, 0, 0, 0],
@@ -143,12 +141,12 @@ test('check player victory/lose', () => {
         [0, 0, 1, 1, 1, 1],
         [0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(true);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(false);
 
     gameGrid = [
         [0, 0, 0, 0, 0, 0],
@@ -157,12 +155,12 @@ test('check player victory/lose', () => {
         [0, 0, 0, 0, 0, 0],
         [1, 1, 1, 1, 0, 0],
         [0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(true);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(false);
 
     gameGrid = [
         [0, 0, 0, 0, 0, 0],
@@ -171,11 +169,12 @@ test('check player victory/lose', () => {
         [0, 0, 0, 0, 0, 0],
         [1, 1, 1, 1, 0, 0],
         [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(true);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(false);
 
     gameGrid = [
         [0, 0, 0, 0, 0, 0],
@@ -186,12 +185,12 @@ test('check player victory/lose', () => {
         [0, 0, 0, 0, 0, 0],
         [0, 0, 1, 1, 1, 1],
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(true);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(false);
 
-
+    //diagonal right
     gameGrid = [
         [1, 0, 0, 0, 0, 0],
         [0, 1, 0, 0, 0, 0],
@@ -201,12 +200,36 @@ test('check player victory/lose', () => {
         [0, 0, 0, 0, 2, 0],
         [0, 0, 0, 0, 0, 2]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(true);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(true);
 
 
+    //diagonal left
+    gameGrid = [
+        [0, 0, 0, 2, 0, 0],
+        [0, 0, 2, 0, 0, 0],
+        [0, 2, 0, 0, 1, 0],
+        [2, 0, 0, 1, 0, 0],
+        [0, 0, 1, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 0, 1, 1, 1, 1],
+    ];
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(true);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(true);
+
+});
+
+
+
+test('check victory is insensitiv to auther numbers', () => {
+    let player = 0
+    let gameGrid = ''
+
+    //diagonal left
     gameGrid = [
         [3, 6, 6, 1, 6, 6],
         [6, 3, 1, 6, 5, 7],
@@ -216,24 +239,10 @@ test('check player victory/lose', () => {
         [4, 7, 7, 2, 7, 7],
         [8, 8, 8, 9, 9, 9]
     ];
-    player = 1
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 2
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 3
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 4
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 5
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(true);
-    player = 6
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
-    player = 7
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
-    player = 8
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
-    player = 9
-    expect(isVictory(player, gameGrid)).toBeInTheDocument(false);
+    player = true
+    expect(isVictory(player, gameGrid)).toBe(true);
+    player = false
+    expect(isVictory(player, gameGrid)).toBe(true);
 
 
 });
