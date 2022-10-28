@@ -47,7 +47,7 @@ export class Power4 extends React.Component {
         </ErrorBoundary>
         <ErrorBoundary>
           <GameMessages partyMessage={this.state.partyMessage} />
-          <button onClick={this.reinitParty.bind(this)}>reinit</button>
+          <button data-testid="BT_Reset" onClick={this.reinitParty.bind(this)}>reinit</button>
         </ErrorBoundary>
         <ErrorBoundary>
           <GameGrid addTokenInColumn={this.addTokenInColumn} gameGrid={this.state.gameGrid} />

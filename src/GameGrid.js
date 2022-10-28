@@ -22,6 +22,7 @@ export class GameGrid extends React.Component {
                                     this.props.addTokenInColumn(columnNumber);
                                 }}
                                 data-playecolumn={columnNumber}
+                                data-testid={"col" + columnNumber}
                             >
                                 play here
                             </th>
