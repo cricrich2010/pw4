@@ -1,6 +1,5 @@
-.players {
-
-    display: flex;
+.noToken {
+    background-color: white;
 }
 
 .player {
@@ -18,12 +17,19 @@
     color: red;
 }
 
+.players {
+    display: flex;
+}
+
 .playerYello {
     margin-block-start: 0.5em;
     margin-block-end: 0.5em;
     background-color: lightyellow;
     color: yellow;
+}
 
+.redToken {
+    background-color: red;
 }
 
 .victories {
@@ -37,15 +43,6 @@
 .yelloToken {
     background-color: yellow;
 }
-
-.redToken {
-    background-color: red;
-}
-
-.noToken {
-    background-color: white;
-}
-
 
 table.board {
     width: 100%;

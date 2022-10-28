@@ -3,8 +3,8 @@ describe('Players add tokens', () => {
     cy.visit('http://localhost:3000')
 
     //proper token is add 
-    //address system in use is sensitiv to the dom structur.
-    //Hence more relable id and classe name should be used.
+    //Note/ address system in use to locate token is sensitiv to the dom structur.
+    //Hence more relable "id" should be used.
     cy.get('[data-playecolumn="0"]').click()
     cy.get(':nth-child(6)  > :nth-child(1) > .yelloToken').should("exist")
     cy.get('[data-playecolumn="1"]').click()
@@ -67,7 +67,6 @@ describe('Players add tokens', () => {
     cy.get(':nth-child(3)  > :nth-child(3) > .noToken').should("exist")
     cy.get(':nth-child(3)  > :nth-child(4) > .noToken').should("exist")
     cy.get(':nth-child(3)  > :nth-child(5) > .noToken').should("exist")
-
 
   })
 })

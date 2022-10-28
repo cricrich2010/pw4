@@ -6,7 +6,7 @@ jest.mock('./computeVictory.js')
 test("change player for next turn", () => {
     isVictory.mockReturnValue(false)
     let column = 0
-    let NewState = {}
+    let newState = {}
 
     let state = {
         redVictories: 0,
@@ -17,17 +17,16 @@ test("change player for next turn", () => {
         gameGrid: new Array(7).fill(0).map((it) => new Array(6).fill(0)),
     };
 
-    NewState = computeNextState(column, state)
-    expect(NewState.activePlayer).toBe(true)
-    NewState = computeNextState(column, NewState)
-    expect(NewState.activePlayer).toBe(false)
-
+    newState = computeNextState(column, state)
+    expect(newState.activePlayer).toBe(true)
+    newState = computeNextState(column, newState)
+    expect(newState.activePlayer).toBe(false)
 })
 
 test("increment victory counter", () => {
     isVictory.mockReturnValue(true)
     let column = 0
-    let NewState = {}
+    let newState = {}
 
     let state = {
         redVictories: 0,
@@ -37,28 +36,28 @@ test("increment victory counter", () => {
         partyMessage: "New Game",
         gameGrid: new Array(7).fill(0).map((it) => new Array(6).fill(0)),
     };
+
     column = 3
     state.activePlayer = false
-    NewState = computeNextState(column, state)
-    expect(NewState.yellowVictories).toBe(1)
-    state.activePlayer = false
-    NewState = computeNextState(column, state)
-    expect(NewState.yellowVictories).toBe(2)
+    newState = computeNextState(column, state)
+    expect(newState.yellowVictories).toBe(1)
+    newState.activePlayer = false
+    newState = computeNextState(column, newState)
+    expect(newState.yellowVictories).toBe(2)
 
     state.activePlayer = true
-    NewState = computeNextState(column, state)
-    expect(NewState.redVictories).toBe(1)
-    state.activePlayer = true
-    NewState = computeNextState(column, state)
-    expect(NewState.redVictories).toBe(2)
-
+    newState = computeNextState(column, state)
+    expect(newState.redVictories).toBe(1)
+    newState.activePlayer = true
+    newState = computeNextState(column, newState)
+    expect(newState.redVictories).toBe(2)
 });
 
 
 test("update victory gamestatus", () => {
     isVictory.mockReturnValue(true)
     let column = 0
-    let NewState = {}
+    let newState = {}
 
     let state = {
         redVictories: 0,
@@ -71,13 +70,10 @@ test("update victory gamestatus", () => {
 
     column = 3
     state.activePlayer = false
-    NewState = computeNextState(column, state)
-    expect(NewState.isVictory).toBe(true)
-
+    newState = computeNextState(column, state)
+    expect(newState.isVictory).toBe(true)
 });
 
 
 test("prevent add extra token in full collumn", () => {
-
-
 })

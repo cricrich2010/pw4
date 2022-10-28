@@ -2,7 +2,7 @@ import React from "react";
 
 
 export function isVictory(player, gameGrid) {
-    //receive boolean, covert to coresponding player number
+    //receive boolean, convert to corresponding player number
     player = player ? 1 : 2
     //check collumn
     for (let col = 0; col < 7; col++) {

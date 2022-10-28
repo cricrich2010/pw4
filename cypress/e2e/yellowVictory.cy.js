@@ -1,6 +1,6 @@
 
 describe('yellow victory', () => {
-  it('passes', () => {
+  it('yellow victory', () => {
     cy.visit('http://localhost:3000')
     cy.get(':nth-child(2) > .victories').contains("Victory: 0").should("exist")
     cy.get('[data-playecolumn="0"]').click()
